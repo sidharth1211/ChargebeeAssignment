@@ -42,18 +42,25 @@
         <nav>
             <ul>
                 <% if(user) {%>
-                <li><a href="/auth/logout">Logout</a></li>
-                <% } else { %>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">profile</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <% } else { %>
+                    <li><a href="/auth/login">Login</a></li>
+                    <% } %>
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/profile">profile</a></li>
             </ul>
         </nav>
+        
         <header>
-            <h1>Chargebee Ecommerce Web App</h1>
-            <h2>Homepage</h2>
+            <h1>Welcome, <%= user.username %> </h1>
+            <p> You are a , <%= user.userType %>
+                <a href="/edit">  Edit</a><p>
         </header>
+        <main>
+            <img src="<%= 
+            user.thumbnail
+        %>" alt="">
+        </main>
         
     </body>
 </html>
